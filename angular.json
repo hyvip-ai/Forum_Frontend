@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "forum"
+  "defaultProject": "forum",
+  "cli": {
+    "analytics": "9970c190-ea56-4c89-bdaa-352c96f31b6a"
+  }
 }

@@ -1,0 +1,16 @@
+
+<div class="mycontainer" *ngIf='main'>
+    
+            <div class="card" *ngFor='let item of main'>
+                <img src="{{item.image}}" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.title}}</h5>
+                  <h6 class="card-title">{{item.author}}</h6>
+                  <p class="card-text">{{item.description}}</p>
+                   <a href="{{item.url}}" class="btn btn-outline-info" target="_blank">Read Full Article</a>
+                </div>
+            </div>
+
+       
+        
+    </div>

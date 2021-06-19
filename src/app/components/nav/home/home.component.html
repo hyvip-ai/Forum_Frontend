@@ -1,0 +1,17 @@
+<div class="container" *ngIf='queries'>
+    <div class="card text-center" *ngFor='let item of queries.messege;index as i' style="margin-top: 50px;">
+        <div class="card-header">
+          Query {{i+1}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{item.question}}</h5>
+          <p class="card-text">Posted By {{item.askedby.username}}</p>
+          <p class="card-text">{{item.answers.length}} Answers</p>
+
+          <a routerLink='/home/detail/{{item._id}}' class="btn btn-outline-info">View Details</a>
+        </div>
+        <div class="card-footer text-muted">
+          {{item.time | date}}
+        </div>
+      </div>
+</div>

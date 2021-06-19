@@ -1,0 +1,42 @@
+<!-- <p>register works!</p> -->
+
+<div class="mydatadiv">
+    <h1 *ngIf='mydata'>{{mydata.messege}}</h1>
+  </div>
+  <div class="container-fluid">
+      <div class="container">
+          
+          <div class="row justify-content-between">
+              <div class="col-5 data">
+  
+                  <h1>Stack Overflow Clone</h1>
+                  <h4>Build a community for coders because we aren't simple we have more complexity than bubble sort algorithm</h4>
+              </div>
+              <div class="col-5 myform">
+                 
+                  <form class="form-floating" [formGroup]="registrationForm">
+                     <h2>Registration Form</h2>
+                      <div class="form-floating">
+                          <input formControlName='name' type="text" class="form-control" id="floatingName" placeholder="Enter Your name">
+                          <label for="floatingInput">Enter Your name</label>
+                        </div>
+                        <div class="form-floating">
+                          <input formControlName='username' type="text" class="form-control" id="floatingUsername" placeholder="Enter Your username">
+                          <label for="floatingInput">Enter Your Username</label>
+                        </div>
+                      <div class="form-floating">
+                          <input formControlName='email' type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                          <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                          <input formControlName='password' type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">Password</label>
+                        </div>
+                        <button class="btn btn-primary" (click)="registerme()" [disabled]="!registrationForm.valid">Submit</button>
+                        <button class="btn btn-success" (click)="gotologin()">Go to Login Page</button>
+  
+                    </form>
+              </div>
+          </div>
+      </div>
+  </div>

@@ -1,0 +1,36 @@
+<!-- <p>login works!</p> -->
+
+
+<div class="mydatadiv">
+    <h1 *ngIf='mydata'>{{mydata.messege}}</h1>
+</div>
+<div class="container-fluid">
+    <div class="container">
+    
+        <div class="row justify-content-between">
+            <div class="col-5 data">
+
+                <h1>Stack Overflow Clone</h1>
+                <h4>Build a community for coders because we aren't simple we have more complexity than bubble sort algorithm</h4>
+            </div>
+            <div class="col-5 myform">
+               
+                <form class="form-floating" [formGroup]="loginForm">
+                   <h2>Login Form</h2>
+
+                    <div class="form-floating">
+                        <input formControlName='email' type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                      </div>
+                      <div class="form-floating">
+                        <input formControlName='password' type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                      </div>
+                      <button class="btn btn-primary" (click)="login()" [disabled]="!loginForm.valid">Submit</button>
+                      <button class="btn btn-success" (click)='gotoregi()'>Go to Registration</button>
+
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>

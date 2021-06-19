@@ -1,0 +1,38 @@
+<div class="container" *ngIf = 'question'>
+
+    <h2>Question</h2>
+    <h6>{{question.data.question}}</h6>
+    <p>{{question.data.answers.length}} answers</p>
+    <p>Asked by {{question.data.askedby.username}}</p>
+    
+    <button (click)='disclose()' class="btn btn-outline-secondary">Answer Question</button>
+
+</div>
+
+<div class="container" *ngIf = 'answerpart'>
+    <form [formGroup]='answerform'>
+        <angular-editor formControlName="answer" [config]="editorConfig"></angular-editor>
+    
+    <button class="btn btn-outline-success" (click)='answerit()'>Submit Answer</button>
+    </form>
+</div>
+
+<div class="container" *ngIf='mainanswer'> 
+
+    <h2>Answers</h2>
+<div *ngFor='let item of answers.data;index as i'>
+    <div class="answers">
+   <p [innerHtml]='item.answer'></p>
+  <p>By {{item.answerdby.username}}</p>
+  <p>{{item.right}} Up Votes <br>
+     </p>
+ 
+      <button class="btn btn-outline-success" (click)='upvote(item._id)' *ngIf = '!item.clicked'>Up Vote</button><button class="btn btn-outline-danger" (click)='downvote(item._id)' *ngIf='item.clicked'>Down Vote</button>
+ 
+ 
+</div>
+</div>
+</div>
+
+
+
