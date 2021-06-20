@@ -57,7 +57,7 @@ answerform = new FormGroup({
   constructor(private router:Router,private service:UserService,private activatedroutes:ActivatedRoute,private domSanitize:DomSanitizer) { }
   question:any = null
   answers:any = null
- 
+  username:any = localStorage.getItem('username')
   mainanswer:boolean = false
   answerpart:boolean = false
   ngOnInit(): void {
@@ -68,7 +68,10 @@ answerform = new FormGroup({
     this.service.getanswers(this.activatedroutes.snapshot.params.id).subscribe(res=>{
       console.log(res);
       this.answers = res;
+
+      
       for(let i=0;i<this.answers.data.length;i++){
+   
         this.answers.data[i].answer = this.transform(this.answers.data[i].answer)
         this.mainanswer=true
       }
@@ -94,7 +97,7 @@ answerform = new FormGroup({
     return this.domSanitize.bypassSecurityTrustHtml(html);
   }
   upvote(id:any){
- 
+    
     this.service.giveupvote(id).subscribe(res=>{
       console.log(res);
       window.location.reload();

@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
       {
         console.log(this.mydata.token)
         localStorage.setItem('token',this.mydata.token)
+        localStorage.setItem('username',this.mydata.user._id)
+        console.log(localStorage.getItem('username'))
         setTimeout(() => {
             this.router.navigate(['/home/feed'])
         }, 3000);

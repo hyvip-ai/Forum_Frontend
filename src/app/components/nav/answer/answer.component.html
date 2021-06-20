@@ -24,11 +24,19 @@
     <div class="answers">
    <p [innerHtml]='item.answer'></p>
   <p>By {{item.answerdby.username}}</p>
-  <p>{{item.right}} Up Votes <br>
-     </p>
+  <p>{{item.right}} Up Votes
+     </p> 
  
-      <button class="btn btn-outline-success" (click)='upvote(item._id)' *ngIf = '!item.clicked'>Up Vote</button><button class="btn btn-outline-danger" (click)='downvote(item._id)' *ngIf='item.clicked'>Down Vote</button>
- 
+      
+<div class="mybtndiv1" *ngIf='!item.clicked.includes(username)'>
+    <button class="btn btn-outline-success" (click)='upvote(item._id)'>Up Vote</button>
+
+</div> 
+<div class="mybtndiv1" *ngIf='item.clicked.includes(username)'>
+    <button class="btn btn-outline-danger" (click)='downvote(item._id)'>Down Vote</button>
+
+
+</div> 
  
 </div>
 </div>
